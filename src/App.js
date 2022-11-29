@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const results = [0, 1];
+	for (let i = 2; i <= 25; i++) {
+		const a = results[i - 1];
+		const b = results[i - 2];
+
+		results.push(a + b);
+	}
+	return (
+		<div className='App'>
+			<header className='App-header'>
+				<h2> On my way to being a Ninja </h2>
+				<h4>Fibonacci Sequence to the nth value</h4>
+				{results.map((result, index) => (
+					<li>{result}</li>
+				))}
+			</header>
+		</div>
+	);
 }
 
 export default App;
